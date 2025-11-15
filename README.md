@@ -34,7 +34,7 @@ For each account you want to access, run `authorise.py` to generate a `credentia
 authorise.py --client-secret client_secret.json \
              --token-file credentials.json \
              --listen-port 0
-``
+```
 
 **client-secret** -- This is the json file you downloaded when the client was created.
 
@@ -45,7 +45,8 @@ authorise.py --client-secret client_secret.json \
 ```
 get_token.py --credentials-file credentials.json
 
-``
+```
+
 **credentials-file** -- The credentials file created by the `authorise.py` script.
 
 The output (to stdout) is a valid access token, based on the credentials file. It will be refreshed automatically, if necessary.
