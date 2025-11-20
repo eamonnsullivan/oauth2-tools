@@ -52,14 +52,6 @@ def get_field(credentials: Path, field: str) -> str:
 
     creds = Credentials.from_authorized_user_file(credentials)
 
-    if not creds.valid:
-        if creds.expired and creds.refresh_token:
-            print("Refreshing expired credentials.")
-            creds.refresh(Request())
-            credentials.write_text(creds.to_json())
-        else:
-            sys.exit("No valid refresh-token - re-run authorise.py")
-
     if field == "client_id":
         return creds.client_id
     elif field == "client_secret":
